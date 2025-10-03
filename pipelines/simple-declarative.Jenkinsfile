@@ -4,7 +4,7 @@ pipeline{
         SENTENCE = "I hope your brother's El Camino runs forevers"
     }
     stages {
-        stage ('hello'){
+        stage ('Hello'){
             steps {
                 echo 'Hello world!!'
                 
