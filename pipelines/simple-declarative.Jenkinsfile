@@ -1,21 +1,12 @@
-pipeline{
+pipeline {
+
     agent any
-    environment{
-        SENTENCE = "I hope your brother's El Camino runs forevers"
-    }
+
     stages {
-        stage ('Hello'){
+        stage ('SCM'){
             steps {
-                echo 'Hello world!!'
-                
-                script {
-                    def words = env.SENTENCE.split(' ')
-                    
-                    for (word in words){
-                        echo word
-                    }
-                }
+               git branch: 'main', url: 'https://github.com/ElomKS/declarative-pipelines.git'
             }
         }
     }
-}
+}}
