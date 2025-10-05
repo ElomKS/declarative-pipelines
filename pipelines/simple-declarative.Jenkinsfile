@@ -16,5 +16,16 @@ pipeline {
                //
             }
         }
+        stage ('Package'){
+            when {
+                expression {
+                    retuen params.branch == 'release'
+                }
+            steps {
+
+                echo 'Packaging in process'
+               //
+            }
+        }
     }
 }
