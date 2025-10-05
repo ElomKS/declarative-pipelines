@@ -21,6 +21,7 @@ pipeline {
                 expression {
                     retuen params.branch == 'release'
                 }
+            }
             steps {
 
                 echo 'Packaging in process'
@@ -28,5 +29,4 @@ pipeline {
             }
         }
     }
-}
 }
