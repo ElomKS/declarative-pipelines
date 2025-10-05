@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'branch', defaultValue: 'release', description: 'Branch to fetch for the pipeline')
+    }
 
     triggers{
         cron('0 3 * * 1-5')
@@ -7,7 +10,7 @@ pipeline {
     stages {
         stage ('SCM'){
             steps {
-               git branch: 'main', url: 'https://github.com/ElomKS/declarative-pipelines.git'
+               git branch: "${params.branch}", url: 'https://github.com/ElomKS/declarative-pipelines.git'
             }
         }
         stage ('build'){
