@@ -19,7 +19,7 @@ pipeline {
         stage ('Package'){
             when {
                 expression {
-                    retuen params.branch == 'release'
+                    return params.branch == 'release'
                 }
             }
             steps {
